@@ -1,4 +1,4 @@
-print("Welcome! Ls add some odd float numbers!")
+print("Hi! Please add odd float numbers!")
 
 # Ask for the number of inputs
 while True:
