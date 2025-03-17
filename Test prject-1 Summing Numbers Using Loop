@@ -1,0 +1,45 @@
+print("Hello WELCOME! Let's add some odd float numbers!")
+
+# Ask for the number of inputs
+while True:
+    try:
+        num_count = int(input("How many numbers do you want to add? (Odd floats only) "))
+        if num_count <= 0:
+            print("Please enter a positive number.")
+            continue
+        break
+    except ValueError:
+        print("Error, enter a number")
+
+# Initialize a sum variable and a list to keep track of the numbers
+total_sum = 0
+numbers = []
+
+#Collect the user's input
+for i in range(num_count):
+    while True:
+        try:
+            user_input = input(f"Enter odd float number {i + 1}: ")
+            number = float(user_input)
+
+            # Making sure the enetering it's not an integer
+            if number.is_integer():
+                print(f"{int(number)} is an integer. Enter an odd float!")
+                continue
+
+            # Checking the number if it's odd
+            if int(number) % 2 == 0:
+                print(f"{number} is even. Try an odd numbrt.")
+                continue
+
+            # Add to list and sum
+            numbers.append(number)
+            total_sum += number
+            break
+
+        except ValueError:
+            print(f"'{user_input}' is not a valid number. Try again.")
+
+# Show results
+print(f"\nNumbers you entered: {numbers}")
+print(f"Total sum: {total_sum}")
